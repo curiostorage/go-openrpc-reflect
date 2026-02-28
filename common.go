@@ -31,16 +31,14 @@ var nullSchema meta_schema.JSONSchema
 
 func init() {
 	nullS := "Null"
-
-	var nullT interface{}
-	nullT = "null"
+	nullT := meta_schema.SimpleTypes("null")
 
 	required, deprecated := true, false
 
 	nullSchema = meta_schema.JSONSchema{
 		JSONSchemaObject: &meta_schema.JSONSchemaObject{
 			Type: &meta_schema.Type{
-				SimpleTypes: (*meta_schema.SimpleTypes)(&nullT),
+				SimpleTypes: &nullT,
 			},
 		}}
 

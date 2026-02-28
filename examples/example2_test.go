@@ -12,9 +12,9 @@ import (
 	meta_schema "github.com/open-rpc/meta-schema"
 )
 
-// ExampleDocument_DiscoverStandard2 demonstrates an OpenRPC rpc/document
+// ExampleDocument_Discover_custom demonstrates an OpenRPC rpc/document
 // implementation with a custom configuration.
-func ExampleDocument_DiscoverStandard2() {
+func ExampleDocument_Discover_custom() {
 	calculatorRPCService := new(fakearithmetic.CalculatorRPC)
 
 	// Assign a new standard lib rpc server.

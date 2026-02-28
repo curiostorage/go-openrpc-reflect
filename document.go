@@ -196,9 +196,12 @@ func (d *Document) Discover() (*meta_schema.OpenrpcDocument, error) {
 		return *methods[i].Name < *methods[j].Name
 	})
 
-	// Assign by slice address.
-	m := meta_schema.Methods(methods)
-	out.Methods = &m
+	// Convert []MethodObject to Methods ([]MethodOrReference).
+	methodRefs := make(meta_schema.Methods, len(methods))
+	for i := range methods {
+		methodRefs[i] = meta_schema.MethodOrReference{MethodObject: &methods[i]}
+	}
+	out.Methods = &methodRefs
 
 	return out, nil
 }

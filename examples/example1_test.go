@@ -49,9 +49,9 @@ func (c *MyCalculator) PlusOne(arg *PlusOneArg, reply *PlusOneReply) error {
 	return nil
 }
 
-// ExampleDocument_DiscoverStandard demonstrates a basic application implementation
+// ExampleDocument_Discover demonstrates a basic application implementation
 // of the OpenRPC document service.
-func ExampleDocument_DiscoverStandard() {
+func ExampleDocument_Discover() {
 	calculatorRPCService := new(MyCalculator)
 
 	// Assign a new standard lib rpc server.
@@ -184,10 +184,9 @@ func ExampleDocument_DiscoverStandard() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(*discoverReply.Openrpc)
-	// Output: 1.2.4
-
 	j, _ := json.MarshalIndent(discoverReply, "", "    ")
 	log.Println(string(j))
-	// TADA!
+
+	fmt.Println(*discoverReply.Openrpc)
+	// Output: 1.3.2
 }

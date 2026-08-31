@@ -16,8 +16,8 @@ import (
 	"runtime"
 	"strings"
 
+	go_jsonschema_walk "github.com/LexLuthr/go-jsonschema-walk"
 	"github.com/alecthomas/jsonschema"
-	go_jsonschema_walk "github.com/etclabscore/go-jsonschema-walk"
 	"github.com/go-openapi/spec"
 	meta_schema "github.com/open-rpc/meta-schema"
 )
